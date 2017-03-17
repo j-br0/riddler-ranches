@@ -6,7 +6,7 @@ B in upper right quadrant
 C in lower right quadrant
 D in lower left quandrant
 Calculate slopes
-Return True if non-convexness detected"""
+Return False if non-convexness detected"""
 
 def run_once():
     ax = float(randint(1,99999))
