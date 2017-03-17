@@ -28,15 +28,15 @@ def run_once():
         cdslope = (dy - cy) / (dx - cx)
     bcslope = (by - cy) / (bx - cx)
     if abslope > 0 and adslope > abslope:
-        return True
-    elif cdslope < 0 and adslope < cdslope:
-        return True
-    elif cdslope > 0 and bcslope > cdslope:
-        return True
-    elif abslope < 0 and bcslope < abslope:
-        return True
-    else:
         return False
+    elif cdslope < 0 and adslope < cdslope:
+        return False
+    elif cdslope > 0 and bcslope > cdslope:
+        return False
+    elif abslope < 0 and bcslope < abslope:
+        return False
+    else:
+        return True
 
 def run_a_lot(times):
     count = 0
