@@ -1,0 +1,50 @@
+from random import randint
+
+"""Create four random points:
+A in upper left quadrant
+B in upper right quadrant
+C in lower right quadrant
+D in lower left quandrant
+Calculate slopes
+Return True if non-convexness detected"""
+
+def run_once():
+    ax = float(randint(1,99999))
+    ay = float(randint(1,99999) + 100000)
+    bx = float(randint(1,99999))
+    by = float(randint(1,99999))
+    cx = float(randint(1,99999) + 100000)
+    cy = float(randint(1,99999))
+    dx = float(randint(1,99999) + 100000)
+    dy = float(randint(1,99999) + 100000)
+    if ax == bx: #Making sure we don't divide by zero
+        abslope = 999999.0
+    else:
+        abslope = (ay - by) / (ax - bx)
+    adslope = (dy - ay) / (dx - ax)
+    if cx == dx:
+        cdslope = 999999.0
+    else:
+        cdslope = (dy - cy) / (dx - cx)
+    bcslope = (by - cy) / (bx - cx)
+    if abslope > 0 and adslope > abslope:
+        return True
+    elif cdslope < 0 and adslope < cdslope:
+        return True
+    elif cdslope > 0 and bcslope > cdslope:
+        return True
+    elif abslope < 0 and bcslope < abslope:
+        return True
+    else:
+        return False
+
+def run_a_lot(times):
+    count = 0
+    for i in range(times):
+        if run_once():
+            count += 1.0
+    return count / times
+
+print run_a_lot(1000000)
+print run_a_lot(1000000)
+print run_a_lot(1000000)
