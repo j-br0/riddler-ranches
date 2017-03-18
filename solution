@@ -4,7 +4,7 @@ from random import randint
 A in upper left quadrant
 B in lower left quadrant
 C in lower right quadrant
-D in upper left quandrant
+D in upper right quandrant
 Calculate slopes
 Return False if non-convexness detected"""
 
