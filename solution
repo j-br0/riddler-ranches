@@ -9,8 +9,8 @@ Calculate slopes
 Return False if non-convexness detected"""
 
 def run_once():
-    ax = float(randint(1,99999))
-    ay = float(randint(1,99999) + 100000)
+    ax = float(randint(1,99999)) #Random x-value for A 
+    ay = float(randint(1,99999) + 100000) #Random y-value, pushed to upper half
     bx = float(randint(1,99999))
     by = float(randint(1,99999))
     cx = float(randint(1,99999) + 100000)
@@ -27,7 +27,7 @@ def run_once():
     else:
         cdslope = (dy - cy) / (dx - cx)
     bcslope = (by - cy) / (bx - cx)
-    if abslope > 0 and adslope > abslope:
+    if abslope > 0 and adslope > abslope: #Check corner in A quadrant
         return False
     elif cdslope < 0 and adslope < cdslope:
         return False
