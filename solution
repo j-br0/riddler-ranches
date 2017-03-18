@@ -2,9 +2,9 @@ from random import randint
 
 """Create four random points:
 A in upper left quadrant
-B in upper right quadrant
+B in lower left quadrant
 C in lower right quadrant
-D in lower left quandrant
+D in upper left quandrant
 Calculate slopes
 Return False if non-convexness detected"""
 
